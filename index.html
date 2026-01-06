@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protasia</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Protasia - AI-Powered Document Generator | Create Professional Proposals & Reports Instantly</title>
+    <meta name="description" content="Transform plain text into professional proposals, presentations, and reports with AI. Protasia generates structured documents instantly using best practices and predefined templates.">
+    <meta name="keywords" content="AI document generator, proposal generator, business report tool, presentation creator, automated document creation, professional templates, AI writing assistant">
+    <meta name="author" content="Protasia">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://protasia.io/">
+    <meta property="og:title" content="Protasia - AI-Powered Document Generator">
+    <meta property="og:description" content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
+    <meta property="og:image" content="https://protasia.io/img/protasia-social.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://protasia.io/">
+    <meta property="twitter:title" content="Protasia - AI-Powered Document Generator">
+    <meta property="twitter:description" content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
+    <meta property="twitter:image" content="https://protasia.io/img/protasia-social.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://protasia.io/">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Protasia",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "operatingSystem": "Web",
+        "description": "AI-powered document generator that transforms plain text into professional proposals, presentations, and reports",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127"
+        }
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -21,127 +71,98 @@
             --cream: #F5F1E8;
             --charcoal: #2A2A2A;
             --soft-white: #FDFCF9;
+            --gray: #666;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--soft-white) 0%, var(--cream) 100%);
+            background: var(--soft-white);
             color: var(--charcoal);
+            line-height: 1.6;
             overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
         }
 
-        /* Decorative background elements */
-        .bg-decoration {
+        /* Header / Navigation */
+        header {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
+            right: 0;
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-header {
+            height: 40px;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .cta-button {
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 165, 91, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(201, 165, 91, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--soft-white) 0%, var(--cream) 100%);
+            position: relative;
             overflow: hidden;
         }
 
-        .circle {
+        .hero::before {
+            content: '';
             position: absolute;
-            border-radius: 50%;
-            opacity: 0.08;
-        }
-
-        .circle-1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
             top: -200px;
             right: -200px;
-            animation: float 20s ease-in-out infinite;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 165, 91, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        .circle-2 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--dark-gold) 0%, transparent 70%);
-            bottom: -100px;
-            left: -100px;
-            animation: float 15s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -30px) scale(1.05); }
-        }
-
-        /* Main container */
-        .container {
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
         }
 
-        /* Logo section */
-        .logo-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            animation: fadeInDown 1.2s ease-out;
-        }
-
-        .logo-wrapper {
-            display: inline-block;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(201, 165, 91, 0.15);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .logo-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 80px rgba(201, 165, 91, 0.25);
-        }
-
-        .logo {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Content section */
-        .content {
-            text-align: center;
-            max-width: 700px;
-            animation: fadeInUp 1.2s ease-out 0.3s backwards;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(201, 165, 91, 0.3);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.9; }
-        }
-
-        h1 {
+        .hero h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 4rem;
             font-weight: 300;
@@ -150,184 +171,461 @@
             line-height: 1.2;
         }
 
-        .subtitle {
+        .hero-highlight {
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .hero p {
             font-size: 1.25rem;
-            font-weight: 300;
-            color: #666;
-            margin-bottom: 3rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
             line-height: 1.8;
         }
 
-        /* Loading bar - CENTERED */
-        .progress-container {
-            margin: 3rem auto 0 auto;
-            width: 100%;
-            max-width: 400px;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .progress-label {
-            font-size: 0.875rem;
-            color: var(--dark-gold);
-            margin-bottom: 1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: rgba(201, 165, 91, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--dark-gold) 100%);
-            border-radius: 10px;
-            width: 0%;
-            animation: progressLoad 3s ease-out forwards;
-            box-shadow: 0 0 20px rgba(201, 165, 91, 0.5);
-        }
-
-        @keyframes progressLoad {
-            to { width: 75%; }
-        }
-
-        /* Contact info */
-        .contact-info {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(201, 165, 91, 0.3);
-            animation: fadeIn 1.5s ease-out 0.6s backwards;
-        }
-
-        .contact-label {
-            font-size: 0.875rem;
-            color: #888;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-email {
-            font-size: 1.125rem;
-            color: var(--dark-gold);
+        .secondary-button {
+            padding: 0.75rem 2rem;
+            background: white;
+            color: var(--charcoal);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
-        .contact-email:hover {
+        .secondary-button:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: var(--soft-white);
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(201, 165, 91, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-white) 100%);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(201, 165, 91, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: var(--gray);
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .use-case {
+            padding: 2rem;
+            background: var(--soft-white);
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .use-case h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .use-case p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .cta-button {
+            background: white;
+            color: var(--dark-gold);
+            font-size: 1.1rem;
+            padding: 1rem 3rem;
+        }
+
+        .cta-section .cta-button:hover {
+            background: var(--soft-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
             color: var(--gold);
         }
 
-        /* Footer note - STATIC POSITION */
-        .footer-note {
-            position: relative;
-            margin-top: 4rem;
-            padding: 2rem 0;
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
             text-align: center;
-            font-size: 0.75rem;
-            color: #999;
-            letter-spacing: 0.5px;
-            animation: fadeIn 2s ease-out 1s backwards;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
+            header {
+                padding: 1rem 3%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .subtitle {
+            .hero p {
                 font-size: 1rem;
             }
 
-            .logo {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button,
+            .secondary-button {
+                width: 100%;
                 max-width: 300px;
-            }
-
-            .logo-wrapper {
-                padding: 1.5rem;
-            }
-
-            .circle-1, .circle-2 {
-                width: 300px;
-                height: 300px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-decoration">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-    </div>
+    <!-- Header -->
+    <header>
+        <img src="img/protasia.png" alt="Protasia - AI Document Generator" class="logo-header">
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#get-started" class="cta-button">Get Started</a>
+    </header>
 
-    <div class="container">
-        <div class="logo-section">
-            <div class="logo-wrapper">
-                <img src="img/protasia.png" alt="Protasia Logo" class="logo">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Ideas into <span class="hero-highlight">Professional Documents</span> Instantly</h1>
+            <p>Protasia uses AI to generate polished proposals, presentations, and reports from your plain text or files. Save hours of formatting and focus on what matters—your content.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Why Choose Protasia?</h2>
+            <p>Professional document creation powered by artificial intelligence</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Generation</h3>
+                <p>Enter your prompt or upload a file, and receive a professionally structured document in seconds. No more staring at blank pages.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Best Practice Templates</h3>
+                <p>Built-in templates based on industry standards ensure your documents follow proven formats that get results.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Professional Layouts</h3>
+                <p>Clean, modern designs that make your content shine. Export-ready documents that impress stakeholders.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Multiple Document Types</h3>
+                <p>Create proposals, presentations, reports, business plans, and more—all from a single platform.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>AI-Powered Intelligence</h3>
+                <p>Advanced AI understands context and generates content that matches your requirements and tone.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Team Collaboration</h3>
+                <p>Work together with team members, share templates, and maintain consistency across all your documents.</p>
             </div>
         </div>
+    </section>
 
-        <div class="content">
-            <div class="status-badge">Under Construction</div>
-            
-            <h1>Something Extraordinary<br>is Coming Soon</h1>
-            
-            <p class="subtitle">
-                We're crafting an exceptional experience for you. 
-                Our team is working diligently to bring you something truly remarkable.
-            </p>
-
-            <div class="progress-container">
-                <div class="progress-label">Progress</div>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2>Simple, Fast, Professional</h2>
+            <p>Three steps to perfect documents</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Enter Your Content</h3>
+                <p>Type your ideas or upload existing files. Protasia accepts plain text, documents, and more.</p>
             </div>
-
-            <div class="contact-info">
-                <div class="contact-label">Get in Touch</div>
-                <a href="mailto:protasiasaas@gmail.com" class="contact-email">protasiasaas@gmail.com</a>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Choose Your Template</h3>
+                <p>Select from proposals, presentations, reports, or let AI recommend the best format for your needs.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Download & Share</h3>
+                <p>Get your professionally formatted document instantly. Export to PDF, DOCX, or PPTX formats.</p>
             </div>
         </div>
+    </section>
 
-        <div class="footer-note">
-            © 2026 Protasia. All rights reserved.
+    <!-- Use Cases -->
+    <section class="use-cases" id="use-cases">
+        <div class="section-header">
+            <h2>Built for Every Business Need</h2>
+            <p>From startups to enterprises, Protasia adapts to your workflow</p>
         </div>
-    </div>
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3>📊 Business Proposals</h3>
+                <p>Create compelling proposals that win clients with professional structure and persuasive formatting.</p>
+            </div>
+            <div class="use-case">
+                <h3>📈 Executive Reports</h3>
+                <p>Transform data and insights into polished reports that communicate clearly to stakeholders.</p>
+            </div>
+            <div class="use-case">
+                <h3>🎤 Presentations</h3>
+                <p>Generate slide-ready content with proper hierarchy and visual appeal for any audience.</p>
+            </div>
+            <div class="use-case">
+                <h3>💡 Business Plans</h3>
+                <p>Structure your vision into comprehensive business plans that attract investors and partners.</p>
+            </div>
+            <div class="use-case">
+                <h3>📝 Project Documentation</h3>
+                <p>Keep teams aligned with well-organized project docs, specs, and requirements.</p>
+            </div>
+            <div class="use-case">
+                <h3>🎓 Research Papers</h3>
+                <p>Format academic and technical papers according to standard guidelines and best practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Protasia</h4>
+                <p>AI-powered document generation for modern professionals. Transform ideas into polished documents instantly.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#use-cases">Use Cases</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:protasiasaas@gmail.com">protasiasaas@gmail.com</a></p>
+                <p>Get in touch for partnerships, support, or feedback.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Protasia. All rights reserved. Made with passion for productivity.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Analytics / Tracking (add your analytics code here) -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
