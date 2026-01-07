@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
-    <title>Protasia - AI-Powered Document Generator | Create Professional Proposals & Reports Instantly</title>
-    <meta name="description" content="Transform plain text into professional proposals, presentations, and reports with AI. Protasia generates structured documents instantly using best practices and predefined templates.">
-    <meta name="keywords" content="AI document generator, proposal generator, business report tool, presentation creator, automated document creation, professional templates, AI writing assistant">
+    <title>Protasia</title>
+    <meta name="description"
+        content="Transform plain text into professional proposals, presentations, and reports with AI. Protasia generates structured documents instantly using best practices and predefined templates.">
+    <meta name="keywords"
+        content="AI document generator, proposal generator, business report tool, presentation creator, automated document creation, professional templates, AI writing assistant">
     <meta name="author" content="Protasia">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://protasia.io/">
     <meta property="og:title" content="Protasia - AI-Powered Document Generator">
-    <meta property="og:description" content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
+    <meta property="og:description"
+        content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
     <meta property="og:image" content="https://protasia.io/img/protasia-social.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://protasia.io/">
     <meta property="twitter:title" content="Protasia - AI-Powered Document Generator">
-    <meta property="twitter:description" content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
+    <meta property="twitter:description"
+        content="Transform plain text into professional proposals, presentations, and reports instantly with AI-powered document generation.">
     <meta property="twitter:image" content="https://protasia.io/img/protasia-social.png">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://protasia.io/">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
@@ -57,7 +64,7 @@
         }
     }
     </script>
-    
+
     <style>
         * {
             margin: 0;
@@ -99,7 +106,7 @@
         }
 
         .logo-header {
-            height: 40px;
+            height: 60px;
         }
 
         nav a {
@@ -329,18 +336,22 @@
         }
 
         .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            justify-content: center;
         }
 
         .use-case {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 280px;
             padding: 2rem;
             background: var(--soft-white);
             border-radius: 15px;
             border-left: 4px solid var(--gold);
+            text-align: center;
         }
 
         .use-case h3 {
@@ -353,6 +364,96 @@
         .use-case p {
             color: var(--gray);
             font-size: 0.95rem;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-white) 100%);
+        }
+
+        .coming-soon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-item {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .coming-soon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 165, 91, 0.2);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .coming-soon-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .coming-soon-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-item p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .coming-soon-features li {
+            color: var(--gray);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .coming-soon-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 600;
         }
 
         /* CTA Section */
@@ -391,22 +492,22 @@
         footer {
             background: var(--charcoal);
             color: white;
-            padding: 4rem 5% 2rem;
+            padding: 2.5rem 5% 1.5rem;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1.5fr;
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             color: var(--gold);
         }
 
@@ -415,8 +516,10 @@
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
+            line-height: 1.5;
         }
 
         .footer-section a:hover {
@@ -425,10 +528,10 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Responsive */
@@ -463,9 +566,15 @@
                 width: 100%;
                 max-width: 300px;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -476,14 +585,14 @@
             <a href="#use-cases">Use Cases</a>
             <a href="#contact">Contact</a>
         </nav>
-        <a href="#get-started" class="cta-button">Get Started</a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Transform Ideas into <span class="hero-highlight">Professional Documents</span> Instantly</h1>
-            <p>Protasia uses AI to generate polished proposals, presentations, and reports from your plain text or files. Save hours of formatting and focus on what matters—your content.</p>
+            <p>Protasia uses AI to generate polished proposals, presentations, and reports from your plain text or
+                files. Save hours of formatting and focus on what matters—your content.</p>
         </div>
     </section>
 
@@ -497,17 +606,20 @@
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>Instant Generation</h3>
-                <p>Enter your prompt or upload a file, and receive a professionally structured document in seconds. No more staring at blank pages.</p>
+                <p>Enter your prompt or upload a file, and receive a professionally structured document in seconds. No
+                    more staring at blank pages.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎯</div>
                 <h3>Best Practice Templates</h3>
-                <p>Built-in templates based on industry standards ensure your documents follow proven formats that get results.</p>
+                <p>Built-in templates based on industry standards ensure your documents follow proven formats that get
+                    results.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎨</div>
                 <h3>Professional Layouts</h3>
-                <p>Clean, modern designs that make your content shine. Export-ready documents that impress stakeholders.</p>
+                <p>Clean, modern designs that make your content shine. Export-ready documents that impress stakeholders.
+                </p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📄</div>
@@ -522,7 +634,8 @@
             <div class="feature-card">
                 <div class="feature-icon">💼</div>
                 <h3>Team Collaboration</h3>
-                <p>Work together with team members, share templates, and maintain consistency across all your documents.</p>
+                <p>Work together with team members, share templates, and maintain consistency across all your documents.
+                </p>
             </div>
         </div>
     </section>
@@ -542,7 +655,8 @@
             <div class="step">
                 <div class="step-number">2</div>
                 <h3>Choose Your Template</h3>
-                <p>Select from proposals, presentations, reports, or let AI recommend the best format for your needs.</p>
+                <p>Select from proposals, presentations, reports, or let AI recommend the best format for your needs.
+                </p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
@@ -561,7 +675,8 @@
         <div class="use-cases-grid">
             <div class="use-case">
                 <h3>📊 Business Proposals</h3>
-                <p>Create compelling proposals that win clients with professional structure and persuasive formatting.</p>
+                <p>Create compelling proposals that win clients with professional structure and persuasive formatting.
+                </p>
             </div>
             <div class="use-case">
                 <h3>📈 Executive Reports</h3>
@@ -579,10 +694,14 @@
                 <h3>📝 Project Documentation</h3>
                 <p>Keep teams aligned with well-organized project docs, specs, and requirements.</p>
             </div>
-            <div class="use-case">
-                <h3>🎓 Research Papers</h3>
-                <p>Format academic and technical papers according to standard guidelines and best practices.</p>
-            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon" id="coming-soon">
+        <div class="section-header">
+            <h2>Coming Soon</h2>
+            <p>Exciting new features on the horizon to make document creation even more powerful</p>
         </div>
     </section>
 
@@ -591,17 +710,14 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Protasia</h4>
-                <p>AI-powered document generation for modern professionals. Transform ideas into polished documents instantly.</p>
+                <p>AI-powered document generation for modern professionals. Transform ideas into polished documents
+                    instantly.</p>
             </div>
             <div class="footer-section">
                 <h4>Product</h4>
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#use-cases">Use Cases</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="#about">About Us</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -628,4 +744,5 @@
         });
     </script>
 </body>
+
 </html>
